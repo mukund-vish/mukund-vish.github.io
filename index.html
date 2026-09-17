@@ -1,0 +1,1743 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
+
+  <title>Mukund Vishwakarma — Developer Portfolio</title>
+
+  <meta
+    name="description"
+    content="Mukund Vishwakarma is a Computer Science student and developer focused on Python, web development, cybersecurity, and building practical software."
+  />
+
+  <meta
+    name="keywords"
+    content="Mukund Vishwakarma, Python developer, web developer, cybersecurity, student developer, React, Flask, Linux"
+  />
+
+  <meta name="author" content="Mukund Vishwakarma" />
+
+  <meta property="og:title" content="Mukund Vishwakarma — Developer Portfolio" />
+  <meta
+    property="og:description"
+    content="Computer Science student building software, web applications, security tools, and developer-focused projects."
+  />
+  <meta property="og:type" content="website" />
+
+  <meta name="theme-color" content="#0a0a0a" />
+
+  <style>
+    :root {
+  --bg: #080808;
+  --bg-soft: #0d0d0d;
+  --panel: #101010;
+  --panel-hover: #151515;
+
+  --text: #eeeeee;
+  --text-soft: #a8a8a8;
+  --text-muted: #666666;
+
+  /* RED THEME */
+  --green: #ff3b3b;
+  --green-soft: #ff5555;
+  --green-dark: #3b1111;
+
+  --border: #292020;
+  --border-hover: #4a2929;
+
+  --red: #ff3b3b;
+  --yellow: #ffd166;
+  --blue: #70a7ff;
+
+  --max-width: 1100px;
+  --radius: 8px;
+}
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 80px;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family:
+        "SFMono-Regular",
+        "Cascadia Code",
+        "Roboto Mono",
+        Consolas,
+        monospace;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    ::selection {
+      background: var(--green);
+      color: #000;
+    }
+
+    /* =========================
+       GLOBAL
+    ========================= */
+
+    .container {
+      width: min(92%, var(--max-width));
+      margin: 0 auto;
+    }
+
+    .section {
+      padding: 100px 0;
+    }
+
+    .section-header {
+      margin-bottom: 45px;
+    }
+
+    .terminal-label {
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      margin-bottom: 8px;
+    }
+
+    .terminal-label span {
+      color: var(--green);
+    }
+
+    .section-title {
+      font-size: clamp(2rem, 5vw, 3rem);
+      line-height: 1.15;
+      letter-spacing: -1px;
+    }
+
+    .section-title::before {
+      content: "# ";
+      color: var(--green);
+    }
+
+    .section-description {
+      max-width: 650px;
+      margin-top: 15px;
+      color: var(--text-soft);
+    }
+
+    .green {
+      color: var(--green);
+    }
+
+    .muted {
+      color: var(--text-muted);
+    }
+
+    .divider {
+      height: 1px;
+      background: var(--border);
+      margin: 0 auto;
+      width: min(92%, var(--max-width));
+    }
+
+    /* =========================
+       NAVBAR
+    ========================= */
+
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+
+      background: rgba(8, 8, 8, 0.88);
+      backdrop-filter: blur(12px);
+
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .nav-inner {
+      width: min(92%, var(--max-width));
+      margin: 0 auto;
+
+      min-height: 68px;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+    }
+
+    .brand {
+      font-weight: 700;
+      color: var(--green);
+      letter-spacing: -0.5px;
+    }
+
+    .brand::before {
+      content: "~/";
+      color: var(--text-muted);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 25px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--text-soft);
+      font-size: 0.88rem;
+      transition: color 0.2s ease;
+    }
+
+    .nav-links a:hover,
+    .nav-links a:focus-visible {
+      color: var(--green);
+    }
+
+    /* =========================
+       HERO
+    ========================= */
+
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+
+      padding: 130px 0 90px;
+
+      position: relative;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+
+      background:
+        linear-gradient(
+          rgba(124, 255, 155, 0.018) 1px,
+          transparent 1px
+        ),
+        linear-gradient(
+          90deg,
+          rgba(124, 255, 155, 0.018) 1px,
+          transparent 1px
+        );
+
+      background-size: 40px 40px;
+      pointer-events: none;
+
+      mask-image: linear-gradient(
+        to bottom,
+        black,
+        transparent 90%
+      );
+    }
+
+    .hero-content {
+      position: relative;
+      max-width: 900px;
+    }
+
+    .command {
+      color: var(--text-muted);
+      margin-bottom: 20px;
+      font-size: 0.95rem;
+    }
+
+    .command .prompt {
+      color: var(--green);
+    }
+
+    .hero h1 {
+      font-size: clamp(3rem, 9vw, 7rem);
+      line-height: 0.95;
+      letter-spacing: -5px;
+      margin-bottom: 28px;
+    }
+
+    .hero h1 span {
+      color: var(--green);
+    }
+
+    .hero-role {
+      font-size: clamp(1.1rem, 2vw, 1.35rem);
+      color: var(--text-soft);
+      margin-bottom: 20px;
+    }
+
+    .hero-description {
+      max-width: 700px;
+      color: #b4b4b4;
+      font-size: 1rem;
+      margin-bottom: 35px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+
+      min-height: 44px;
+      padding: 0 18px;
+
+      border: 1px solid var(--border);
+      border-radius: 5px;
+
+      color: var(--text-soft);
+      background: var(--panel);
+
+      font-family: inherit;
+      font-size: 0.85rem;
+
+      transition:
+        border-color 0.2s ease,
+        background 0.2s ease,
+        color 0.2s ease,
+        transform 0.2s ease;
+    }
+
+    .button:hover,
+    .button:focus-visible {
+      border-color: var(--green);
+      color: var(--green);
+      background: var(--panel-hover);
+      transform: translateY(-2px);
+    }
+
+    .button.primary {
+      color: #000;
+      background: var(--green);
+      border-color: var(--green);
+      font-weight: 700;
+    }
+
+    .button.primary:hover,
+    .button.primary:focus-visible {
+      color: #000;
+      background: #92ffaa;
+    }
+
+    .cursor {
+      display: inline-block;
+      width: 9px;
+      height: 1.1em;
+      margin-left: 4px;
+
+      background: var(--green);
+      vertical-align: -2px;
+
+      animation: blink 1s step-end infinite;
+    }
+
+    @keyframes blink {
+      50% {
+        opacity: 0;
+      }
+    }
+
+    /* =========================
+       PROJECTS
+    ========================= */
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+    }
+
+    .project-card {
+      position: relative;
+
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+
+      padding: 28px;
+
+      display: flex;
+      flex-direction: column;
+
+      min-height: 330px;
+
+      transition:
+        transform 0.25s ease,
+        border-color 0.25s ease,
+        background 0.25s ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-5px);
+      border-color: var(--border-hover);
+      background: var(--panel-hover);
+    }
+
+    .project-card.featured {
+      border-color: rgba(124, 255, 155, 0.25);
+    }
+
+    .project-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 20px;
+
+      margin-bottom: 22px;
+    }
+
+    .project-number {
+      color: var(--text-muted);
+      font-size: 0.8rem;
+    }
+
+    .project-icon {
+      color: var(--green);
+      font-size: 1.2rem;
+    }
+
+    .project-card h3 {
+      font-size: 1.4rem;
+      margin-bottom: 10px;
+    }
+
+    .project-card h3 a:hover {
+      color: var(--green);
+    }
+
+    .project-description {
+      color: var(--text-soft);
+      font-size: 0.9rem;
+      margin-bottom: 22px;
+    }
+
+    .project-details {
+      display: grid;
+      gap: 8px;
+      margin-bottom: 25px;
+    }
+
+    .project-detail {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+    }
+
+    .project-detail strong {
+      color: var(--text-soft);
+      font-weight: 500;
+    }
+
+    .tech-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+
+      margin-top: auto;
+      margin-bottom: 22px;
+    }
+
+    .tech {
+      padding: 4px 8px;
+
+      border: 1px solid var(--border);
+      border-radius: 4px;
+
+      color: var(--green);
+      background: rgba(124, 255, 155, 0.025);
+
+      font-size: 0.72rem;
+    }
+
+    .project-link {
+      color: var(--text-muted);
+      font-size: 0.8rem;
+
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+
+      width: fit-content;
+    }
+
+    .project-link:hover {
+      color: var(--green);
+    }
+
+    /* =========================
+       EXPERIENCE
+    ========================= */
+
+    .experience-wrapper {
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      background: var(--panel);
+    }
+
+    .terminal-bar {
+      height: 42px;
+
+      display: flex;
+      align-items: center;
+      gap: 7px;
+
+      padding: 0 15px;
+
+      border-bottom: 1px solid var(--border);
+      background: #0c0c0c;
+    }
+
+    .terminal-dot {
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: var(--border-hover);
+    }
+
+    .terminal-title {
+      margin-left: 7px;
+      color: var(--text-muted);
+      font-size: 0.72rem;
+    }
+
+    .experience-content {
+      padding: 35px;
+    }
+
+    .experience-item {
+      position: relative;
+
+      padding-left: 30px;
+      padding-bottom: 45px;
+
+      border-left: 1px solid var(--border);
+    }
+
+    .experience-item:last-child {
+      padding-bottom: 0;
+    }
+
+    .experience-item::before {
+      content: "";
+
+      position: absolute;
+      left: -5px;
+      top: 3px;
+
+      width: 9px;
+      height: 9px;
+
+      border-radius: 50%;
+      background: var(--green);
+
+      box-shadow: 0 0 12px rgba(124, 255, 155, 0.3);
+    }
+
+    .experience-date {
+      color: var(--green);
+      font-size: 0.78rem;
+      margin-bottom: 7px;
+    }
+
+    .experience-item h3 {
+      font-size: 1.25rem;
+      margin-bottom: 4px;
+    }
+
+    .experience-company {
+      color: var(--green-soft);
+      margin-bottom: 18px;
+      font-size: 0.9rem;
+    }
+
+    .experience-list {
+      list-style: none;
+      display: grid;
+      gap: 7px;
+    }
+
+    .experience-list li {
+      color: var(--text-muted);
+      font-size: 0.84rem;
+    }
+
+    .experience-list li::before {
+      content: "→ ";
+      color: var(--green);
+    }
+
+    /* =========================
+       SKILLS
+    ========================= */
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+    }
+
+    .skill-group {
+      border: 1px solid var(--border);
+      background: var(--panel);
+      border-radius: var(--radius);
+      padding: 23px;
+    }
+
+    .skill-group h3 {
+      color: var(--green);
+      font-size: 0.9rem;
+      margin-bottom: 17px;
+    }
+
+    .skill-group ul {
+      list-style: none;
+      display: grid;
+      gap: 7px;
+    }
+
+    .skill-group li {
+      color: var(--text-soft);
+      font-size: 0.82rem;
+    }
+
+    .skill-group li::before {
+      content: "./";
+      color: var(--text-muted);
+      margin-right: 7px;
+    }
+
+    /* =========================
+       CURRENTLY
+    ========================= */
+
+    .currently {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+
+    .currently-card {
+      padding: 28px;
+
+      border: 1px solid var(--border);
+      background: var(--panel);
+      border-radius: var(--radius);
+    }
+
+    .currently-card h3 {
+      margin-bottom: 13px;
+      color: var(--green);
+      font-size: 1rem;
+    }
+
+    .currently-card p {
+      color: var(--text-soft);
+      font-size: 0.88rem;
+    }
+
+    /* =========================
+       ABOUT
+    ========================= */
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1.3fr 0.7fr;
+      gap: 60px;
+      align-items: start;
+    }
+
+    .about-text {
+      color: var(--text-soft);
+      font-size: 0.95rem;
+    }
+
+    .about-text p + p {
+      margin-top: 18px;
+    }
+
+    .about-terminal {
+      border: 1px solid var(--border);
+      background: var(--panel);
+      border-radius: var(--radius);
+      padding: 23px;
+    }
+
+    .about-terminal-line {
+      font-size: 0.8rem;
+      margin-bottom: 8px;
+      color: var(--text-muted);
+    }
+
+    .about-terminal-line span {
+      color: var(--green);
+    }
+
+    /* =========================
+       CONNECT
+    ========================= */
+
+    .connect {
+      text-align: center;
+      padding-bottom: 120px;
+    }
+
+    .connect-content {
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .connect h2 {
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      margin-bottom: 15px;
+    }
+
+    .connect h2::before {
+      content: "$ ";
+      color: var(--green);
+    }
+
+    .connect p {
+      color: var(--text-soft);
+      margin-bottom: 30px;
+    }
+
+    .socials {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .social-link {
+      padding: 9px 14px;
+
+      border: 1px solid var(--border);
+      border-radius: 4px;
+
+      color: var(--text-muted);
+      font-size: 0.8rem;
+
+      transition:
+        color 0.2s ease,
+        border-color 0.2s ease;
+    }
+
+    .social-link:hover,
+    .social-link:focus-visible {
+      color: var(--green);
+      border-color: var(--green);
+    }
+
+    /* =========================
+       FOOTER
+    ========================= */
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 25px 0;
+
+      color: var(--text-muted);
+      font-size: 0.72rem;
+    }
+
+    .footer-inner {
+      width: min(92%, var(--max-width));
+      margin: 0 auto;
+
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .footer-green {
+      color: var(--green);
+    }
+
+    /* =========================
+       REVEAL ANIMATION
+    ========================= */
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(18px);
+
+      transition:
+        opacity 0.7s ease,
+        transform 0.7s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* =========================
+       RESPONSIVE
+    ========================= */
+
+    @media (max-width: 850px) {
+      .projects-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .about-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+    }
+
+    @media (max-width: 650px) {
+      .section {
+        padding: 75px 0;
+      }
+
+      .nav-inner {
+        min-height: 60px;
+      }
+
+      .nav-links {
+        gap: 12px;
+      }
+
+      .nav-links li:nth-child(n + 4) {
+        display: none;
+      }
+
+      .hero {
+        min-height: auto;
+        padding: 130px 0 90px;
+      }
+
+      .hero h1 {
+        font-size: clamp(3rem, 18vw, 5rem);
+        letter-spacing: -3px;
+      }
+
+      .hero-actions {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .button {
+        width: 100%;
+      }
+
+      .skills-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .currently {
+        grid-template-columns: 1fr;
+      }
+
+      .experience-content {
+        padding: 25px 20px;
+      }
+
+      .project-card {
+        padding: 23px;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+
+      .reveal {
+        opacity: 1;
+        transform: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- =========================
+       NAVIGATION
+  ========================== -->
+
+  <header class="navbar">
+    <div class="nav-inner">
+
+      <a class="brand" href="#top" aria-label="Mukund Vishwakarma home">
+        mukund-vish
+      </a>
+
+      <nav aria-label="Main navigation">
+        <ul class="nav-links">
+          <li><a href="#projects">projects</a></li>
+          <li><a href="#experience">experience</a></li>
+          <li><a href="#skills">skills</a></li>
+          <li><a href="#about">about</a></li>
+          <li><a href="#connect">connect</a></li>
+        </ul>
+      </nav>
+
+    </div>
+  </header>
+
+
+  <main id="top">
+
+    <!-- =========================
+         HERO
+    ========================== -->
+
+    <section class="hero">
+      <div class="container">
+
+        <div class="hero-content reveal">
+
+          <div class="command">
+            <span class="prompt">mukund@portfolio:~$</span>
+            whoami
+          </div>
+
+          <h1>
+            Mukund<br />
+            <span>Vishwakarma</span><span class="cursor"></span>
+          </h1>
+
+          <p class="hero-role">
+            Computer Science Student · Developer · Security Focused
+          </p>
+
+          <p class="hero-description">
+            I build practical software with Python and the web, while
+            exploring cybersecurity, Linux, networking, and security tooling.
+            Currently pursuing Computer Science with an expected graduation
+            in 2027.
+          </p>
+
+          <div class="hero-actions">
+            <a class="button primary" href="#projects">
+              view projects →
+            </a>
+
+            <a
+              class="button"
+              href="https://github.com/mukund-vish"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              GitHub ↗
+            </a>
+
+            <a class="button" href="#connect">
+              connect
+            </a>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <div class="divider"></div>
+
+
+    <!-- =========================
+         PROJECTS
+    ========================== -->
+
+    <section class="section" id="projects">
+      <div class="container">
+
+        <div class="section-header reveal">
+
+          <div class="terminal-label">
+            <span>mukund@portfolio:~$</span> ls ./projects
+          </div>
+
+          <h2 class="section-title">
+            Featured Projects
+          </h2>
+
+          <p class="section-description">
+            Things I've actually built — from terminal games and developer
+            tools to intentionally vulnerable applications and reconnaissance
+            automation.
+          </p>
+
+        </div>
+
+
+        <div class="projects-grid">
+
+          <!-- PokeCLI -->
+
+          <article class="project-card featured reveal">
+
+            <div class="project-top">
+              <span class="project-number">01</span>
+              <span class="project-icon">⌘</span>
+            </div>
+
+            <h3>
+              <a
+                href="https://github.com/mukund-vish/PokeCLI"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                PokeCLI ↗
+              </a>
+            </h3>
+
+            <p class="project-description">
+              A turn-based Pokémon battle game that runs directly in the
+              terminal. The battle system includes AI decision-making,
+              three lives, and intentionally avoids hardcoded battle logic.
+            </p>
+
+            <div class="project-details">
+              <div class="project-detail">
+                <strong>Type:</strong> CLI / Game
+              </div>
+
+              <div class="project-detail">
+                <strong>Focus:</strong> Python, game logic, AI
+              </div>
+            </div>
+
+            <div class="tech-list">
+              <span class="tech">Python</span>
+              <span class="tech">CLI</span>
+              <span class="tech">AI</span>
+            </div>
+
+            <a
+              class="project-link"
+              href="https://github.com/mukund-vish/PokeCLI"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              inspect repository →
+            </a>
+
+          </article>
+
+
+          <!-- Web-Force -->
+
+          <article class="project-card featured reveal">
+
+            <div class="project-top">
+              <span class="project-number">02</span>
+              <span class="project-icon">⌁</span>
+            </div>
+
+            <h3>
+              <a
+                href="https://github.com/mukund-vish/Web-Force"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Web-Force ↗
+              </a>
+            </h3>
+
+            <p class="project-description">
+              A flexible multi-threaded password testing tool for web
+              applications, built for authorized security testing and
+              experimentation.
+            </p>
+
+            <div class="project-details">
+              <div class="project-detail">
+                <strong>Features:</strong> User-agent customization,
+                proxy support, logging
+              </div>
+
+              <div class="project-detail">
+                <strong>Focus:</strong> Security tooling & concurrency
+              </div>
+            </div>
+
+            <div class="tech-list">
+              <span class="tech">Python</span>
+              <span class="tech">Security</span>
+              <span class="tech">Multi-threading</span>
+            </div>
+
+            <a
+              class="project-link"
+              href="https://github.com/mukund-vish/Web-Force"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              inspect repository →
+            </a>
+
+          </article>
+
+
+          <!-- VTB-App -->
+
+          <article class="project-card reveal">
+
+            <div class="project-top">
+              <span class="project-number">03</span>
+              <span class="project-icon">⚠</span>
+            </div>
+
+            <h3>
+              <a
+                href="https://github.com/mukund-vish/VTB-App"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                VTB-App ↗
+              </a>
+            </h3>
+
+            <p class="project-description">
+              A Flask-based intentionally vulnerable web application created
+              as a controlled environment for learning web security and
+              testing security tooling.
+            </p>
+
+            <div class="project-details">
+              <div class="project-detail">
+                <strong>Purpose:</strong> Security learning lab
+              </div>
+
+              <div class="project-detail">
+                <strong>Focus:</strong> Web security & testing
+              </div>
+            </div>
+
+            <div class="tech-list">
+              <span class="tech">Flask</span>
+              <span class="tech">Python</span>
+              <span class="tech">Security</span>
+            </div>
+
+            <a
+              class="project-link"
+              href="https://github.com/mukund-vish/VTB-App"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              inspect repository →
+            </a>
+
+          </article>
+
+
+          <!-- Recon Script -->
+
+          <article class="project-card reveal">
+
+            <div class="project-top">
+              <span class="project-number">04</span>
+              <span class="project-icon">⌁</span>
+            </div>
+
+            <h3>
+              <a
+                href="https://github.com/mukund-vish/The-OG-Recon-Script"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                The-OG-Recon-Script ↗
+              </a>
+            </h3>
+
+            <p class="project-description">
+              A reconnaissance automation script for authorized security
+              research that chains together tools for subdomain discovery,
+              DNS, WHOIS, network scanning, and information gathering.
+            </p>
+
+            <div class="project-details">
+              <div class="project-detail">
+                <strong>Focus:</strong> Reconnaissance & OSINT
+              </div>
+
+              <div class="project-detail">
+                <strong>Workflow:</strong> Automated security enumeration
+              </div>
+            </div>
+
+            <div class="tech-list">
+              <span class="tech">Bash</span>
+              <span class="tech">Recon</span>
+              <span class="tech">OSINT</span>
+              <span class="tech">Nmap</span>
+              <span class="tech">Amass</span>
+              <span class="tech">Subfinder</span>
+            </div>
+
+            <a
+              class="project-link"
+              href="https://github.com/mukund-vish/The-OG-Recon-Script"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+            inspect repository →
+            </a>
+
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <div class="divider"></div>
+
+
+    <!-- =========================
+         EXPERIENCE
+    ========================== -->
+
+    <section class="section" id="experience">
+      <div class="container">
+
+        <div class="section-header reveal">
+
+          <div class="terminal-label">
+            <span>mukund@portfolio:~$</span> cat experience.log
+          </div>
+
+          <h2 class="section-title">
+            Experience
+          </h2>
+
+          <p class="section-description">
+            My practical experience alongside my Computer Science studies.
+          </p>
+
+        </div>
+
+
+        <div class="experience-wrapper reveal">
+
+          <div class="terminal-bar">
+            <span class="terminal-dot"></span>
+            <span class="terminal-dot"></span>
+            <span class="terminal-dot"></span>
+            <span class="terminal-title">
+              experience.log
+            </span>
+          </div>
+
+
+          <div class="experience-content">
+
+            <!-- Experience 01 -->
+
+            <article class="experience-item">
+
+              <div class="experience-date">
+                2024 — PRESENT
+              </div>
+
+              <h3>
+                Technical Trainer
+              </h3>
+
+              <div class="experience-company">
+                <a href="https://vintecheducation.org/faculty.html" target="_blank" rel="noopener noreferrer">
+                  Vintech Computer Education
+                </a>
+              </div>
+
+              <ul class="experience-list">
+                <li>
+                  Deliver technical training and explain programming and
+                  computer concepts.
+                </li>
+
+                <li>
+                  Work with students across different levels of technical
+                  understanding.
+                </li>
+
+                <li>
+                  Develop practical knowledge through teaching and
+                  hands-on problem solving.
+                </li>
+              </ul>
+
+            </article>
+
+
+            <!-- Experience 02 -->
+
+            <article class="experience-item">
+
+              <div class="experience-date">
+                2025 — PRESENT
+              </div>
+
+              <h3>
+                Web Development
+              </h3>
+
+              <div class="experience-company">
+                <a href="https://vintecheducation.org" target="_blank" rel="noopener noreferrer">
+                  Vintech Computer Education
+                </a>
+              </div>
+
+              <ul class="experience-list">
+                <li>
+                  Developing and managing the institute's official website.
+                </li>
+
+                <li>
+                  Working on ongoing website improvements and maintenance.
+                </li>
+
+                <li>
+                  Applying web development skills to a real-world
+                  organization.
+                </li>
+              </ul>
+
+            </article>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <div class="divider"></div>
+
+
+    <!-- =========================
+         SKILLS
+    ========================== -->
+
+    <section class="section" id="skills">
+      <div class="container">
+
+        <div class="section-header reveal">
+
+          <div class="terminal-label">
+            <span>mukund@portfolio:~$</span> cat skills.txt
+          </div>
+
+          <h2 class="section-title">
+            Technical Stack
+          </h2>
+
+          <p class="section-description">
+            Technologies I work with across software development,
+            web development, security, and Linux environments.
+          </p>
+
+        </div>
+
+
+        <div class="skills-grid">
+
+          <div class="skill-group reveal">
+
+            <h3>languages</h3>
+
+            <ul>
+              <li>Python</li>
+              <li>C</li>
+              <li>C++</li>
+              <li>Java</li>
+              <li>JavaScript</li>
+            </ul>
+
+          </div>
+
+
+          <div class="skill-group reveal">
+
+            <h3>web</h3>
+
+            <ul>
+              <li>HTML5</li>
+              <li>CSS3</li>
+              <li>React</li>
+              <li>Node.js</li>
+              <li>Express.js</li>
+              <li>MongoDB</li>
+            </ul>
+
+          </div>
+
+
+          <div class="skill-group reveal">
+
+            <h3>security</h3>
+
+            <ul>
+              <li>Burp Suite</li>
+              <li>Metasploit</li>
+              <li>Wireshark</li>
+              <li>Snort</li>
+              <li>Splunk</li>
+            </ul>
+
+          </div>
+
+
+          <div class="skill-group reveal">
+
+            <h3>systems</h3>
+
+            <ul>
+              <li>Linux</li>
+              <li>Bash</li>
+              <li>PowerShell</li>
+              <li>Git</li>
+              <li>Docker</li>
+              <li>VS Code</li>
+            </ul>
+
+          </div>
+
+
+          <div class="skill-group reveal">
+
+            <h3>development</h3>
+
+            <ul>
+              <li>Flask</li>
+              <li>CLI applications</li>
+              <li>REST APIs</li>
+              <li>Web applications</li>
+              <li>Automation</li>
+            </ul>
+
+          </div>
+
+
+          <div class="skill-group reveal">
+
+            <h3>focus</h3>
+
+            <ul>
+              <li>Python development</li>
+              <li>Web development</li>
+              <li>Cybersecurity</li>
+              <li>Networking</li>
+              <li>Linux environments</li>
+            </ul>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <div class="divider"></div>
+
+
+    <!-- =========================
+         CURRENTLY
+    ========================== -->
+
+    <section class="section">
+      <div class="container">
+
+        <div class="section-header reveal">
+
+          <div class="terminal-label">
+            <span>mukund@portfolio:~$</span> cat currently.txt
+          </div>
+
+          <h2 class="section-title">
+            Currently
+          </h2>
+
+        </div>
+
+
+        <div class="currently">
+
+          <article class="currently-card reveal">
+
+            <h3>→ Building</h3>
+
+            <p>
+              Working on Python projects, web applications, and security
+              tooling while continuing to improve my development workflow.
+            </p>
+
+          </article>
+
+
+          <article class="currently-card reveal">
+
+            <h3>→ Learning</h3>
+
+            <p>
+              Deepening my understanding of cybersecurity, networking,
+              Linux, web security, and practical software engineering.
+            </p>
+
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <div class="divider"></div>
+
+
+    <!-- =========================
+         ABOUT
+    ========================== -->
+
+    <section class="section" id="about">
+      <div class="container">
+
+        <div class="section-header reveal">
+
+          <div class="terminal-label">
+            <span>mukund@portfolio:~$</span> cat about.md
+          </div>
+
+          <h2 class="section-title">
+            About
+          </h2>
+
+        </div>
+
+
+        <div class="about-grid">
+
+          <div class="about-text reveal">
+
+            <p>
+              I'm a Computer Science student who enjoys understanding how
+              things work and then building something with that knowledge.
+            </p>
+
+            <p>
+              My main development focus is Python and web development.
+              Alongside that, I'm exploring cybersecurity and building
+              small tools to understand security concepts through practice.
+            </p>
+
+            <p>
+              I also work as a Technical Trainer at Vintech Computer
+              Education, where I get to combine technical knowledge with
+              teaching and real-world web development.
+            </p>
+
+          </div>
+
+
+          <div class="about-terminal reveal">
+
+            <div class="about-terminal-line">
+              <span>name</span> = "Mukund Vishwakarma"
+            </div>
+
+            <div class="about-terminal-line">
+              <span>role</span> = "Computer Science Student"
+            </div>
+
+            <div class="about-terminal-line">
+              <span>track</span> = "Python · Security"
+            </div>
+
+            <div class="about-terminal-line">
+              <span>graduation</span> = "2027"
+            </div>
+
+            <div class="about-terminal-line">
+              <span>base</span> = "India"
+            </div>
+
+            <div class="about-terminal-line">
+              <span>pronouns</span> = "he/him"
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- =========================
+         CONNECT
+    ========================== -->
+
+    <section class="section connect" id="connect">
+      <div class="container">
+
+        <div class="connect-content reveal">
+
+          <div class="terminal-label">
+            <span>mukund@portfolio:~$</span> ./connect.sh
+          </div>
+
+          <h2>
+            Let's connect
+          </h2>
+
+          <p>
+            Interested in my work, want to discuss a project, or just want
+            to talk about development and security? Find me around the web.
+          </p>
+
+        <div class="socials">
+
+  <a
+    class="social-link"
+    href="mailto:mukundvishwakarma785@example.com"
+  >
+    Email ↗
+  </a>
+
+  <a
+    class="social-link"
+    href="https://github.com/mukund-vish"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    GitHub ↗
+  </a>
+
+  <a
+    class="social-link"
+    href="https://linkedin.com/in/mukund-vishwakarma"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    LinkedIn ↗
+  </a>
+
+  <a
+    class="social-link"
+    href="https://tryhackme.com/p/mukundvish"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    TryHackMe ↗
+  </a>
+
+  <a
+    class="social-link"
+    href="https://medium.com/@mukundvishwakarma785"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    Medium ↗
+  </a>
+
+</div>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- =========================
+       FOOTER
+  ========================== -->
+
+  <footer>
+    <div class="footer-inner">
+
+      <span>
+        <span class="footer-green">mukund@portfolio</span>:~$
+        echo "built with curiosity"
+      </span>
+
+      <span>
+        © 2026 Mukund Vishwakarma
+      </span>
+
+    </div>
+  </footer>
+
+
+  <!-- =========================
+       JAVASCRIPT
+  ========================== -->
+
+  <script>
+    const revealElements = document.querySelectorAll(".reveal");
+
+    if (
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches ||
+      !("IntersectionObserver" in window)
+    ) {
+      revealElements.forEach((element) => {
+        element.classList.add("visible");
+      });
+    } else {
+      const observer = new IntersectionObserver(
+        (entries, observer) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        {
+          threshold: 0.12
+        }
+      );
+
+      revealElements.forEach((element) => {
+        observer.observe(element);
+      });
+    }
+  </script>
+
+</body>
+</html>
